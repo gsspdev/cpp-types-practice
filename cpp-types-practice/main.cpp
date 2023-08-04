@@ -6,35 +6,17 @@
 //
 
 #include <iostream>
-//#include <libstdc++>
-
-//class Book {
-//    public:
-//        std::string title;
-//        std::string author;
-//        int pages;
-//
-//    Book() {
-//        title = "default";
-//        author = "default";
-//        pages = 0;
-//    }
-//
-//    Book(std::string aTitle, std::string aAuthor, int aPages) {
-//        title = aTitle;
-//        author = aAuthor;
-//        pages = aPages;
-//
-//    };
-//};
+using std::string;
+using std::cout;
+using std::endl;
 
 class Student {
     private:
-        std::string gender;
+        string gender;
     
     public:
-        std::string name;
-        std::string major;
+        string name;
+        string major;
         double gpa;
     
         Student() {
@@ -45,14 +27,14 @@ class Student {
             
         }
        
-        Student(std::string aName, std::string aGender, std::string aMajor, double aGpa) {
+        Student(string aName, string aGender, string aMajor, double aGpa) {
             name = aName;
             major = aMajor;
             gpa = aGpa;
             setGender(aGender);
         }
         
-        void setGender(std::string aGender) {
+        void setGender(string aGender) {
             gender = aGender;
         };
         
@@ -73,23 +55,23 @@ int main(int argc, const char * argv[]) {
     
     Student studentA("John", "Male", "Computer Science", 3.2);
     
-    std::cout << studentA.name << std::endl;
-//    std::cout << studentA.gender << std::endl;
-    std::cout << studentA.major << std::endl;
-    std::cout << studentA.gpa << std::endl;
+    cout << studentA.name << endl;
+//    cout << studentA.gender << endl;
+    cout << studentA.major << endl;
+    cout << studentA.gpa << endl;
     
     if (studentA.hasHonors()) {
-        std::cout << "has honors" << std::endl;
+        cout << "has honors" << endl;
     } else {
-        std::cout << "doesn't have honors" << std::endl;
+        cout << "doesn't have honors" << endl;
     };
     
     
-    std::cout << studentA.hasHonors();
+    cout << studentA.hasHonors();
     
     studentA.setGender("female");
 
-//    std::cout << studentAGender << std::endl;
+//    cout << studentAGender << endl;
     
     
     // insert code here...
@@ -104,14 +86,14 @@ int main(int argc, const char * argv[]) {
 //    book2.pages = 725;
     
 //    Book book1("Harry Potter", "JK Rowling", 820);
-//    std::cout << book1.author << std::endl;
+//    cout << book1.author << endl;
 //    Book defaultBook;
-//    std::cout << defaultBook.author << std::endl;
+//    cout << defaultBook.author << endl;
     
 
     
 //
-//    std::cout << book1.author;
-//    std::cout << book2.title;
+//    cout << book1.author;
+//    cout << book2.title;
     
 }

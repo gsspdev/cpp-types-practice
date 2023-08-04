@@ -29,40 +29,38 @@
 //};
 
 class Student {
+    private:
+        std::string gender;
+    
     public:
-    std::string name;
-    std::string major;
-    double gpa;
-    std::string gender;
+        std::string name;
+        std::string major;
+        double gpa;
     
-    
-    Student() {
-        name = "unnamed";
-        major = "unspecified";
-        gpa = 0.0;
-        gender = "unspeified";
+        Student() {
+            name = "unnamed";
+            major = "unspecified";
+            gpa = 0.0;
+//            gender = "unspeified";
+            
+        }
+       
+        Student(std::string aName, std::string aGender, std::string aMajor, double aGpa) {
+            name = aName;
+            major = aMajor;
+            gpa = aGpa;
+            setGender(aGender);
+        }
         
+        void setGender(std::string aGender) {
+            gender = aGender;
+        };
         
-    }
-   
-    Student(std::string aName, std::string aGender, std::string aMajor, double aGpa) {
-        name = aName;
-        major = aMajor;
-        gpa = aGpa;
-        setGender(aGender);
-        
-    }
-    
-    void setGender(std::string aGender) {
-        gender = aGender;
-    };
-    
-    bool hasHonors() {
-        if (gpa >= 3.5){
-            return true;
-        } else {
-            return false;
-        
+        bool hasHonors() {
+            if (gpa >= 3.5){
+                return true;
+            } else {
+                return false;
         }
     };
     
@@ -76,7 +74,7 @@ int main(int argc, const char * argv[]) {
     Student studentA("John", "Male", "Computer Science", 3.2);
     
     std::cout << studentA.name << std::endl;
-    std::cout << studentA.gender << std::endl;
+//    std::cout << studentA.gender << std::endl;
     std::cout << studentA.major << std::endl;
     std::cout << studentA.gpa << std::endl;
     
@@ -88,6 +86,10 @@ int main(int argc, const char * argv[]) {
     
     
     std::cout << studentA.hasHonors();
+    
+    studentA.setGender("female");
+
+//    std::cout << studentAGender << std::endl;
     
     
     // insert code here...

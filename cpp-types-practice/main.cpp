@@ -37,6 +37,11 @@ class Student {
         void setGender(string aGender) {
             gender = aGender;
         };
+    
+    string getName() {
+        return name;
+    
+    }
         
         bool hasHonors() {
             if (gpa >= 3.5){
@@ -49,11 +54,30 @@ class Student {
    
 };
 
+class ArtStudent: Student {
+public:
+    string artMajor;
+    ArtStudent(string aName, string aGender, string aMajor, double aGPa, string aArtMajor):
+    Student(aName, aGender, aMajor, aGPa)
+    {
+        artMajor = aArtMajor;
+    }
+    
+    void PaintPainting() {
+        cout << getName() << " painted a painting as an " << artMajor << endl;
+    }
+};
+
+
+
 
 
 int main(int argc, const char * argv[]) {
     
     Student studentA("John", "Male", "Computer Science", 3.2);
+    ArtStudent artStudentA("Sally", "Non-Binary", "Painting", 3.6, "Painting");
+    
+    artStudentA.PaintPainting();
     
     cout << studentA.name << endl;
 //    cout << studentA.gender << endl;

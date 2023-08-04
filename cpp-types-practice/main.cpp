@@ -38,6 +38,10 @@ class Student {
             gender = aGender;
         };
     
+        string getGender() {
+            return gender;
+        }
+    
     string getName() {
         return name;
     
@@ -64,7 +68,7 @@ public:
     }
     
     void PaintPainting() {
-        cout << getName() << " painted a painting as an " << artMajor << endl;
+        cout << getName() << " painted a painting as a " << getGender() << artMajor << endl;
     }
 };
 
